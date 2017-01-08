@@ -8,7 +8,7 @@ I use Makefile to compile the code, Some common input is also in the Makefile.
 ##Makefile
 * `CC=gcc-5` change this to the compiler you are using I am using gcc/5.3 here.
 * `OMPGLAG=-fopenmp` the OpenMP flag, for icc user use `-qopenmp`. Clang does not support OpenMP therefore leave it blank
-* `HPATH=` and `LIBPARH=` theses are the library and header path for OpenBLAS. See it's [wiki](https://computing.llnl.gov/tutorials/openMP/)for detail.
+* `HPATH=` and `LIBPARH=` theses are the library and header path for OpenBLAS. See it's [wiki](https://computing.llnl.gov/tutorials/openMP/) for detail.
 
 * Other Inputs: there are some inputs in the Makefile, the meaning of them are described in it. 
 * `TAEGETS=` the target program name, make sure to change the name before its rule when changing the target name.
