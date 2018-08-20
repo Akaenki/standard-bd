@@ -1,11 +1,12 @@
-#standard-BD
+# standard-BD
+
 This code requires [OpenBLAS](https://github.com/xianyi/OpenBLAS). [OpenMP](https://computing.llnl.gov/tutorials/openMP/) is optional but recommanded.
 This code can run standard BD simulation of both dilute and semidilute systems. 
 I only test it with gcc, may not be compatible with icc or clang. The code is *only* compativble with C99. 
 
-#Usage
+# Usage
 I use Makefile to compile the code, Some common input is also in the Makefile.
-##Makefile
+## Makefile
 * `CC=gcc-5` change this to the compiler you are using I am using gcc/5.3 here.
 * `OMPGLAG=-fopenmp` the OpenMP flag, for icc user use `-qopenmp`. Clang does not support OpenMP therefore leave it blank
 * `HPATH=` and `LIBPARH=` theses are the library and header path for OpenBLAS. See it's [wiki](https://computing.llnl.gov/tutorials/openMP/) for detail.
@@ -19,7 +20,8 @@ make clean && make
 ````
 
 The inputs that are not included in the Makefile need to be specified through arguments
-##Input arguments
+## Input arguments
+
 * Chain length use flag `-n`. Default value 20
 * Flow type use flag `-f`, 0 - no flow, 1 - planar elongational, 2 - steady shear. Default value 0
 * Flow rate use flag `-r`, **must be specified** if flow type != 0. 
@@ -29,7 +31,8 @@ Example:
 ````
 ./program -t 4 -n 100 -f 1 -r 0.01
 ````
-#Others
+# Others
+
 * The code is mainly used to run dilute system. To run semidilute system need to change the boolean `usePBC` in `main.c` to `true` and have to specify the number of chains and box size in the Makefile or during compiling.
 Example:
 ````
